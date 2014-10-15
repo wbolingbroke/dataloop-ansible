@@ -1,0 +1,3 @@
+---
+- name: restart dataloop-agent
+  service: name=dataloop-agent enabled=yes state=restarted

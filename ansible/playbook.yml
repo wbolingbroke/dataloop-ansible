@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    sys_packages: ["vim", "git"]
+    api_key: redacted
+  roles:
+    - init
+    - dataloop-agent
