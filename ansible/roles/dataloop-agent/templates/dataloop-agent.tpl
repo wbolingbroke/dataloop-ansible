@@ -7,7 +7,7 @@
 # Default-Stop:      0 1 6
 # Description:       Dataloop Agent
 ### END INIT INFO
-API_KEY={{ api_key }}
+API_KEY={{ dataloop_api_key }}
 SERVER=https://www.dataloop.io
 SCRIPT="/usr/local/bin/dataloop-lin-agent --api-key $API_KEY --server $SERVER"
 RUNAS=root
