@@ -1,0 +1,13 @@
+---
+# tasks file for guardrail
+
+# include the distro-specific stuff
+- include: debian.yml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- include: rhel.yml
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Create the config file
+  template: src=dataloop.conf.j2 dest=/etc/dataloop/agent.conf owner=root group=root mode=640
+  notify: restart dataloop-agent
