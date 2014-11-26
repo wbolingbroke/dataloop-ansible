@@ -1,7 +1,10 @@
 ---
 # Ubuntu specific dataloop stuff
-- name: Add the dataloop apt key
-  apt_key: url= state=present
+
+
+# We dont have GPG keys yet
+#- name: Add the dataloop apt key
+#  apt_key: url= state=present
 
 - name: Add dataloop apt repository
   apt_repository: repo='deb https://download.dataloop.io/packages/stable/deb x86_64' state=present
