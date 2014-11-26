@@ -1,0 +1,10 @@
+---
+# Ubuntu specific dataloop stuff
+- name: Add the dataloop apt key
+  apt_key: url= state=present
+
+- name: Add dataloop apt repository
+  apt_repository: repo='deb https://download.dataloop.io/packages/stable/deb x86_64' state=present
+
+- name: Install dataloop
+  apt: name=dataloop-agent state=present

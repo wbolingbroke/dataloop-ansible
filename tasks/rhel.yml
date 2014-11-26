@@ -1,0 +1,7 @@
+---
+#RHEL specific tasks
+- name: Add the guardrail repo to the system
+  copy: src=dataloop.repo dest=/etc/yum.repos.d/dataloop.repo owner=root group=root mode=0644
+
+- name: Install dataloop
+  yum: name=dataloop-agent state=present
