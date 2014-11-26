@@ -7,8 +7,7 @@ metrics back to dataloop.io.
 ## Usage
 
 In order to automatically add a node to dataloop, create a file in
-your client-specific ansible repo named group_vars/dataloop using
-ansible-vault.
+your ansible repo named group_vars/dataloop using ansible-vault.
 
 Make sure the file has the following content:
 
