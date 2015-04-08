@@ -14,4 +14,4 @@
   apt_key: id=113E2B8D url='https://download.dataloop.io/pubkey.gpg' state=present
 
 - name: Install dataloop
-  apt: name=dataloop-agent state=present force=yes
+  apt: name=dataloop-agent state=present
