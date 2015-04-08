@@ -9,5 +9,5 @@
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - name: Create the config file
-  template: src=dataloop-agent.conf.j2 dest=/etc/dataloop/agent.conf owner=root group=root mode=640
+  template: src=dataloop-agent.yaml.j2 dest=/etc/dataloop/agent.yaml owner=root group=root mode=640
   notify: restart dataloop-agent
