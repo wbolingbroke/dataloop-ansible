@@ -1,17 +1,12 @@
 ---
 # Ubuntu specific dataloop stuff
 
-
-# We dont have GPG keys yet
-#- name: Add the dataloop apt key
-#  apt_key: url= state=present
-
-- name: Add dataloop apt repository
-  apt_repository: repo='deb https://download.dataloop.io/deb/ stable main' state=present
-
 # Add an Apt signing key, will not download if present
 - name: Add dataloop gpg key
   apt_key: id=113E2B8D url='https://download.dataloop.io/pubkey.gpg' state=present
+
+- name: Add dataloop apt repository
+  apt_repository: repo='deb https://download.dataloop.io/deb/ stable main' state=present
 
 - name: Install dataloop
   apt: name=dataloop-agent state=present
