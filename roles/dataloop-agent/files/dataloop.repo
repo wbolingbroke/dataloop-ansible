@@ -1,5 +1,8 @@
+# This file was deposited by Ansible
+# Do NOT modify this file by hand.
+
 [dataloop]
 name=Dataloop Agent
 baseurl=https://download.dataloop.io/packages/stable/rpm/$basearch/
 enabled=1
-gpgcheck=0
+gpgcheck=1
