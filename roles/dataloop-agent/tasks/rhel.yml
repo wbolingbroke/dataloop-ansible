@@ -1,7 +1,14 @@
 ---
 #RHEL specific tasks
-- name: Add the guardrail repo to the system
+# msg: Aborting, target uses selinux but python bindings (libselinux-python) aren't installed!
+- name: Install libselinux-python
+  yum: name=libselinux-python
+
+- name: Add the dataloop repo to the system
   copy: src=dataloop.repo dest=/etc/yum.repos.d/dataloop.repo owner=root group=root mode=0644
+
+- name: Import Dataloop package signing gpg key
+  rpm_key: state=present key=https://download.dataloop.io/pubkey.gpg
 
 - name: Install dataloop
   yum: name=dataloop-agent state=present
