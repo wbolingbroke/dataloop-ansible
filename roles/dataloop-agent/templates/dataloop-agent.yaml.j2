@@ -15,7 +15,9 @@ server: wss://agent.dataloop.io
 {% if dataloop_tags is defined %}
 tags: {{ dataloop_tags }}
 {% endif %}
-
+{% if dataloop_tags is not defined %}
+#tags:
+{% endif %}
 
 ## Set if you would like a custom name for this agent. Default is hostname
 #name:
