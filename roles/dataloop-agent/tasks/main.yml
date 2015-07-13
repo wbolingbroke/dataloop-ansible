@@ -11,3 +11,7 @@
 - name: Create the config file
   template: src=dataloop-agent.yaml.j2 dest=/etc/dataloop/agent.yaml owner=root group=dataloop mode=640
   notify: restart dataloop-agent
+  
+  - name: Write dataloop init file
+  file: src=dataloop-agent dest=/etc/init.d/dataloop-agent owner=root group=dataloop mode=640
+  
