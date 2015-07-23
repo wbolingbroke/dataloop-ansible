@@ -9,7 +9,7 @@
   when: ansible_distribution != 'Debian' and ansible_distribution != 'Ubuntu'
 
 - name: Copy dataloop-agent startup script to server 
-  template: src=dataloop-agent dest=/etc/init.d/dataloop-agent owner=root group=dataloop mode=640
+  template: src=dataloop-agent dest=/etc/init.d/dataloop-agent owner=root group=dataloop mode=770
 
 - name: Create the config file
   template: src=dataloop-agent.yaml.j2 dest=/etc/dataloop/agent.yaml owner=root group=dataloop mode=640
